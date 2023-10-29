@@ -9,35 +9,36 @@ on:
 jobs:
   file_generation:
     # Node.jsのセットアップ
-    - name: setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '21.x'
+    steps:
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21.x'
 
-    # yarnでpackage.jsonの依存パッケージをインストール
-    - name: yarn add
-      run: yarn add --frozen-lockfile
+      # yarnでpackage.jsonの依存パッケージをインストール
+      - name: yarn add
+        run: yarn add --frozen-lockfile
 
-    # Next.jsアプリのビルド
-    - name: build
-      run: yarn run build
+      # Next.jsアプリのビルド
+      - name: build
+        run: yarn run build
 
-    # Next.jsから静的HTMLをエクスポート
-    - name: export
-      run: yarn run export
+      # Next.jsから静的HTMLをエクスポート
+      - name: export
+        run: yarn run export
 
-    # GitHub Pagesの仕様で_から始まるディレクトリが見えないため、Next.jsのフォルダ名で問題が出る
-    # 対策に.nojekyllファイルをoutディレクトリに作る
-    - name: add nojekyll
-      run: touch ./out/.nojekyll
+      # GitHub Pagesの仕様で_から始まるディレクトリが見えないため、Next.jsのフォルダ名で問題が出る
+      # 対策に.nojekyllファイルをoutディレクトリに作る
+      - name: add nojekyll
+        run: touch ./out/.nojekyll
 
-    # gh-pagesブランチにoutディレクトリの中身をプッシュする
-    - name: Deploy to GitHub Pages
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: ./out
+      # gh-pagesブランチにoutディレクトリの中身をプッシュする
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./out
 
-    # コンテナにデプロイ
+    # GitHub Pages用のコンテナにデプロイ
     deploy:
       needs: file_generation
       permissions:
