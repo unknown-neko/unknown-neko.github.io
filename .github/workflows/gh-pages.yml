@@ -1,0 +1,44 @@
+name: github pages
+
+on:
+  # masterブランチにプッシュしたときjobsに記述した操作を行う
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    # ubuntuの最新版をコンテナに使用
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    # Node.jsのセットアップ
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '21.x'
+
+    # yarnでpackage.jsonの依存パッケージをインストール
+    - name: yarn add
+      run: yarn add --frozen-lockfile
+
+    # Next.jsアプリのビルド
+    - name: build
+      run: yarn run build
+
+    # Next.jsから静的HTMLをエクスポート
+    - name: export
+      run: yarn run export
+
+    # GitHub Pagesの仕様で_から始まるディレクトリが見えないため、Next.jsのフォルダ名で問題が出る
+    # 対策に.nojekyllファイルをoutディレクトリに作る
+    - name: add nojekyll
+      run: touch ./out/.nojekyll
+
+    # gh-pagesブランチにoutディレクトリの中身をプッシュする
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
