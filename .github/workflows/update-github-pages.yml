@@ -17,6 +17,12 @@ jobs:
 
     # Node.jsのセットアップ
     steps:
+      # GitHub Pagesのconfigure変更
+      - name: configure-pages
+        id: pages
+        uses: actions/configure-pages@v3
+        with:
+          static_site_generator: next
       - name: setup node
         uses: actions/setup-node@v3
         with:
@@ -30,14 +36,12 @@ jobs:
       - name: build
         run: yarn run build
 
+      #########################
+      # step: configure-pagesで静的サイトジェネレータを既に指定しているので不要
+      #########################
       # Next.jsから静的HTMLをエクスポート
-      - name: export
-        run: yarn run export
-
-      # GitHub Pagesの仕様で_から始まるディレクトリが見えないため、Next.jsのフォルダ名で問題が出る
-      # 対策に.nojekyllファイルをoutディレクトリに作る
-      - name: add nojekyll
-        run: touch ./out/.nojekyll
+      # - name: export
+      #  run: yarn run export
 
       # gh-pagesブランチにoutディレクトリの中身をプッシュする
       - name: upload artifact
