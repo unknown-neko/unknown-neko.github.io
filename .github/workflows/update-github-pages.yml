@@ -4,11 +4,11 @@ on:
   # masterブランチにプッシュしたときjobsに記述した操作を行う
   push:
     branches:
-    - master
+      - master
 
 # 同期非同期設定。並列実行はしない
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
