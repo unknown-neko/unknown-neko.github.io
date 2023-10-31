@@ -8,6 +8,7 @@ on:
   # 手動でもワークフローを実行できるように
   workflow_dispatch:
 
+# ジョブの権限管理
 permissions:
   contents: read
   pages: write
@@ -19,7 +20,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # next.jsのビルド開始
+  # next.jsを使ったビルド処理のジョブ
   build:
     runs-on: ubuntu-latest
     steps:
@@ -48,19 +49,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
-      # yarnで
+      # yarnで一連の生成処理を行う
       - name: Install dependencies
         run: "yarn install"
-      - name: Build with Next.js
-        run: "yarn next build"
-      - name: Static HTML export with Next.js
-        run: "yarn next export"
+      - name: Run Build with Script(JS series)
+        run: "yarn run build"
+      - name: Run Export with Script(Static HTML export)
+        run: "yarn run export"
+
+      # GitHubにアップロード
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
 
-  # Deployment job
+  # デプロイのジョブ
   deploy:
     environment:
       name: github-pages
