@@ -54,8 +54,6 @@ jobs:
         run: "yarn install"
       - name: Run Build with Script(JS series)
         run: "yarn run build"
-      - name: Run Export with Script(Static HTML export)
-        run: "yarn run export"
 
       # GitHubにアップロード
       - name: Upload artifact
