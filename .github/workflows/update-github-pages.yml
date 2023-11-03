@@ -36,10 +36,6 @@ jobs:
           node-version: "21.x"
           corepack-enable: true
           cache: "yarn"
-      - run: |
-        npm -v
-        npx -v
-        yarn -v
       #--------------------------
 
       # nextがGitHubActionに公式対応したため、旧来のやり方ではなく下記指定だけでOK
