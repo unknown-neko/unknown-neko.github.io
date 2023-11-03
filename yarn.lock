@@ -152,17 +152,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"app@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "app@workspace:."
-  dependencies:
-    next: "npm:^14.0.1"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    serve: "npm:^14.2.1"
-  languageName: unknown
-  linkType: soft
-
 "arch@npm:^2.2.0":
   version: 2.2.0
   resolution: "arch@npm:2.2.0"
@@ -1021,6 +1010,17 @@ __metadata:
   checksum: a5a7ecf2e654251613218c215c7493574594951c08e52ab9881c9df6a6da0aeca7528c213c622bc374b4e0cb5c443aa3ab758da4e3c959783ce884c3194e12cb
   languageName: node
   linkType: hard
+
+"unknown-neko.github.io@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "unknown-neko.github.io@workspace:."
+  dependencies:
+    next: "npm:^14.0.1"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    serve: "npm:^14.2.1"
+  languageName: unknown
+  linkType: soft
 
 "update-check@npm:1.5.4":
   version: 1.5.4
