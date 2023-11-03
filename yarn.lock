@@ -620,7 +620,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^14.0.1":
+"next@npm:latest":
   version: 14.0.1
   resolution: "next@npm:14.0.1"
   dependencies:
@@ -774,7 +774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:latest":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -786,7 +786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:latest":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -860,7 +860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serve@npm:^14.2.1":
+"serve@npm:latest":
   version: 14.2.1
   resolution: "serve@npm:14.2.1"
   dependencies:
@@ -1015,10 +1015,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "unknown-neko.github.io@workspace:."
   dependencies:
-    next: "npm:^14.0.1"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    serve: "npm:^14.2.1"
+    next: "npm:latest"
+    react: "npm:latest"
+    react-dom: "npm:latest"
+    serve: "npm:latest"
   languageName: unknown
   linkType: soft
 

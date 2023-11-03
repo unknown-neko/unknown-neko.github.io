@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "yarn@4.0.1",
   "dependencies": {
-    "next": "^14.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "serve": "^14.2.1"
+    "serve": "latest"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "serve out"
-  }
+  },
+  "packageManager": "yarn@4.0.1"
 }

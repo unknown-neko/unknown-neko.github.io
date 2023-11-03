@@ -1,5 +1,9 @@
-.yarn/
-!.yarn/release/*
-.next
-node_modules
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+.next/*
 out
