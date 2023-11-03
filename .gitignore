@@ -1,3 +1,5 @@
-node_modules
+.yarn/
+!.yarn/release/*
 .next
+node_modules
 out

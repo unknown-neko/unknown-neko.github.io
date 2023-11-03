@@ -2,21 +2,20 @@
   "name": "unknown-neko.github.io",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:unknown-neko/unknown-neko.github.io.git",
-  "author": "unknown-neko <unknown.neko.mail@gmail.com>",
   "license": "MIT",
+  "packageManager": "yarn@4.0.1",
   "dependencies": {
-    "next": "^14.0.0",
+    "next": "^14.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "serve": "serve out"
-  },
-  "devDependencies": {
-    "serve": "^14.2.1"
   }
 }
