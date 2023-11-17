@@ -33,10 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
 # ---------------ここからyarn4.0.1でyarn initした結果の.gitignore
 .yarn/*
 !.yarn/cache
