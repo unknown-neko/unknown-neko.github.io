@@ -38,3 +38,22 @@ yarn-error.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+# ---------------
+
+# Zero Install用
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# misc
+.DS_Store
+*.pem
+
+# GitHubAction用にGemfile.lockを除外 https://jekyllrb-ja.github.io/docs/continuous-integration/github-actions/
+Gemfile.lock
