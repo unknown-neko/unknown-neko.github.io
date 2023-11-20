@@ -37,24 +37,12 @@ jobs:
 
   # デプロイ ジョブ
   deploy:
-    # ブランチ名がpreviewの時は展開先を変える
-    if: ${{ github.ref_name == "main"}}
-      environment:
-        # mainの時はpageURLそのまま
-        url: ${{ steps.deployment.outputs.page_url }}
-      runs-on: ubuntu-latest
-      needs: build
-      steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v2
-    else:
-      environment:
-        # main以外はブランチ名を挟む
-        url: ${{ steps.deployment.outputs.page_url }}/${{ github.ref_name }}
-      runs-on: ubuntu-latest
-      needs: build
-      steps:
-        - name: Deploy to GitHub Pages
-          id: deployment
-          uses: actions/deploy-pages@v2
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{github.ref_name == 'main' && steps.deployment.outputs.page_url || format('{0}{1}', steps.deployment.outputs.page_url, github.ref_name) }}
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
