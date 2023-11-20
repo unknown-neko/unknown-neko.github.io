@@ -2,20 +2,8 @@
   "name": "unknown-neko.github.io",
   "version": "1.0.0",
   "license": "MIT",
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  },
-  "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.0.2"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
   "packageManager": "yarn@4.0.1"
 }
