@@ -18,7 +18,9 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # テーマ
-gem "minima", "~> 2.5"
+# gem "minima", "~> 2.5"
+# https://github.com/just-the-docs/just-the-docs
+gem "just-the-docs"
 
 # プラグイン
 group :jekyll_plugins do
