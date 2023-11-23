@@ -6,3 +6,5 @@ vendor
 
 # GitHubAction用
 Gemfile.lock
+# 検索用のデータファイルは、デプロイ時に生成(ビルドが遅延し始めたらテコ入れ)
+assets/js/zzzz-search-data.json

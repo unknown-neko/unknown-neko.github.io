@@ -32,6 +32,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      # 検索用データファイル生成 theme側のrakeで生成
+      - name: Build search json asset
+        uses: bundle exec just-the-docs rake search:init
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 

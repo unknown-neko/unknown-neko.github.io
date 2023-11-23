@@ -25,15 +25,9 @@ favicon_ico: "/assets/images/favicon.ico"
 
 #--------------------------
 # 検索機能周り
+# 
+# rakeの実行が必要なため注意：bundle exec just-the-docs rake search:init
 search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
-  tokenizer_separator: /[\s/]+/
-  rel_url: true
-  button: false
 
 #--------------------------
 # 図形を書ける機能は必要になってから
@@ -89,4 +83,3 @@ github_username:  github-name
 # プラグイン
 plugins:
   - jekyll-sitemap
-
