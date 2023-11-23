@@ -44,12 +44,6 @@ jobs:
         env:
           JEKYLL_ENV: production
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-
       # 検索用データファイル生成 theme側のrakeで生成
       - name: Build search json asset
         run: bundle exec just-the-docs rake search:init
