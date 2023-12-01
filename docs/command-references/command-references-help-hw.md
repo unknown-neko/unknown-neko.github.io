@@ -8,4 +8,6 @@ search_exclude: false
 has_toc: false
 ---
 
+TODO:Windowsユーザ向けの記載
+
 ## help-hwコマンドとは
