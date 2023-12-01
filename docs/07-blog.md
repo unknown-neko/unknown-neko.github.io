@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ブログ
-nav_order: 6
+nav_order: 7
 has_children: true
 has_toc: true
 nav_exclude: false

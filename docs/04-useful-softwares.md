@@ -1,7 +1,7 @@
 ---
 layout: default
 title: oYo公認 オススメソフトウェア
-nav_order: 7
+nav_order: 4
 has_children: true
 has_toc: true
 nav_exclude: false

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Teamへの参加方法
-nav_order: 5
+nav_order: 6
 has_children: false
 has_toc: false
 nav_exclude: false
